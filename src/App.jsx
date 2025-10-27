@@ -11,25 +11,26 @@ export default function App() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative py-16 overflow-hidden" style={{backgroundColor: '#5CB85C'}}>
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[400px]">
+        <section className="relative py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 overflow-hidden" style={{backgroundColor: '#5CB85C'}}>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-100/50 to-transparent"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
-                <h1 className="text-6xl font-bold text-white mb-4 leading-tight">
+                <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
                   SENA
                 </h1>
-                <p className="text-lg text-white mb-4">
+                <p className="text-xl text-white mb-8">
                   Centro de Gestión de Mercados, Logística y Tecnologías
                 </p>
-                <p className="text-base text-white mb-6">
+                <p className="text-lg text-white mb-8">
                   Formando profesionales competentes para el desarrollo del país
                 </p>
-                <button className="bg-white text-green-600 px-6 py-2 rounded font-semibold hover:bg-gray-100 transition-colors duration-300 text-sm">
+                <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
                   Conoce más
                 </button>
               </div>
-              <div className="flex justify-center items-center">
-                <div className="bg-white rounded-lg p-8 shadow-lg max-w-sm w-full">
+              <div className="relative">
+                <div className="bg-white rounded-lg p-8 shadow-2xl">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +38,7 @@ export default function App() {
                       </svg>
                     </div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Educación de Calidad</h3>
-                    <p className="text-gray-600 text-sm">Para el futuro de Colombia</p>
+                    <p className="text-gray-600">Para el futuro de Colombia</p>
                   </div>
                 </div>
               </div>
