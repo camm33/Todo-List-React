@@ -1,49 +1,39 @@
-import TodoItem from "./TodoItem"
-import { useState } from "react"
+import React from 'react';
+import Header from './components/Header';
+import Programs from './components/Programs';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
-
-  const [tareas, setTareas] = useState([]);
-
-  const [input, setInput] = useState("");
-
-
-  const   agregarTarea = () => {
-
-    if (input.trim()) {
-      setTareas([...tareas, { id: Date.now(), text: input.trim(), completed: false }]);
-      setInput("");
-    };
-
-  }
-
-
-  const toggleCompleted = (id) => {
-    setTareas(
-      tareas.map((tarea) =>
-        tarea.id === id ? { ...tarea, completed: !tarea.completed } : tarea
-      )
-    );
-  };
-
-
-  const eliminarTarea = (id) => {
-    setTareas(tareas.filter((tarea) => tarea.id !== id));
-
-  }
-
   return (
-    <div className="max-w-md mx-auto mt-10 p-2  rounded shadow">
-      <h1 className="text-3xl font-bold mb-5 text-center">List APPP</h1>
-      <div className="flex gap-3 mb-5">
-        <input className="flex-1 p-2 border rounded" type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Añadir Tarea" />
-        <button className="bg-blue-500 text-white px-4 p-y-2 rounded" onClick={agregarTarea} >Añadir Tareas</button>
-      </div>
-
-      <div className="space-y-2 ">
-        {tareas.map((tarea) => (<TodoItem key={tarea.id} tarea={tarea} toggleCompleted={toggleCompleted} eliminarTarea={eliminarTarea} />))}
-      </div>
-
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        {/* Hero Section */}
+        <section className="py-20 bg-gradient-to-r from-orange-100 to-orange-50">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-5xl font-bold text-gray-800 mb-6">
+                SENA
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Centro de Gestión de Mercados, Logística y Tecnologías
+              </p>
+              <div className="relative">
+                <img 
+                  src="/api/placeholder/800/300" 
+                  alt="SENA Building" 
+                  className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <Programs />
+        <Contact />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
